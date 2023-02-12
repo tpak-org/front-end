@@ -64,3 +64,4 @@ jobs:
       run: |
         pwd
         ls .
+        ls ./cmd/web
