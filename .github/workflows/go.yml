@@ -38,7 +38,7 @@ jobs:
 
     - name: Generate Dynamic Tag
       id: generate-tag
-      run: echo "tag=image-tag-${{ steps.extract_branch.outputs.branch }}-build-${{ env.BUILD_ID }}"
+      run: echo "tag=image-tag-${{ steps.extract_branch.outputs.branch }}-build-${{ github.run_number }}"
 #       outputs:
 #         tag: "${{ steps.generate-tag.outputs.tag }}"
       
