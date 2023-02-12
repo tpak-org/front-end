@@ -21,18 +21,22 @@ jobs:
       with:
         go-version: 1.19
 
-#     - name: Build
-#       env:
-#         GOOS: linux
-#         CGO_ENABLED: 0
+    - name: Build
+      env:
+        GOOS: linux
+        CGO_ENABLED: 0
+        run: go build -o frontendApp ./cmd/web
 #       run: go build -o ${{ env.BUILD_BINARY }} ./cmd/web
 
 #     - name: Test
 #       run: go test -v ./...
 
-#     - name: Generate Dynamic Tag
-#       id: generate-tag
-#       run: echo "image-tag-${{ env.GITHUB_REF }}-build-${{ env.BUILD_ID }}" > tag.txt
+    - name: Generate Dynamic Tag
+      id: generate-tag
+      run: echo "image-tag-${{ env.GITHUB_REF }}-build-${{ env.BUILD_ID }}" > tag.txt
+      
+    - name: Print generate-tag status
+      run: echo "Login status:${{ steps.login.outputs.status }}"
 
 
 #     - name: Build Docker Image
