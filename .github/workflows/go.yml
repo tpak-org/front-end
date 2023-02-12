@@ -61,4 +61,6 @@ jobs:
 #         tags: loctrandocker/frontend-service:${{ steps.generate-tag.outputs.tag }}
 
     - name: Debug
-      run: ls .
+      run: |
+        pwd
+        ls .
