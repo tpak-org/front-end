@@ -42,9 +42,7 @@ jobs:
     - name: Generate Dynamic Tag
       id: generate-tag
       run: |
-        echo "##[set-output name=tag;] \ 
-        $(echo "${{ steps.extract_branch.outputs.branch }}-build-${{ github.run_number }}") \
-        "
+        echo "tag=$(echo '${{ steps.extract_branch.outputs.branch }}-build-${{ github.run_number }}')" >> $GITHUB_OUTPUT
         
 #       outputs:
 #         tag: "${{ steps.generate-tag.outputs.tag }}"
