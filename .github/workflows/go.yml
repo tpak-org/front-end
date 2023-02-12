@@ -50,8 +50,12 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      id: login
+    
+    - name: Print login status
+      run: echo "Login status:${{ steps.login.outputs.status }}"
 
-    - name: Push Docker Image
-      uses: docker/push-action@v1
-      with:
-        tags: loctrandocker/frontend-service:${{ steps.generate-tag.outputs.tag }}
+#     - name: Push Docker Image
+#       uses: docker/push-action@v1
+#       with:
+#         tags: loctrandocker/frontend-service:${{ steps.generate-tag.outputs.tag }}
