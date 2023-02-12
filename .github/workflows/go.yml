@@ -36,7 +36,7 @@ jobs:
       run: echo "image-tag-${{ env.GITHUB_REF }}-build-${{ env.BUILD_ID }}" > tag.txt
       
     - name: Print generate-tag status
-      run: echo "Login status:${{ steps.login.outputs.status }}"
+      run: echo "Login status:${{ steps.generate-tag.outputs.status }}"
 
 
 #     - name: Build Docker Image
