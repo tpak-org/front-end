@@ -57,6 +57,10 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
       id: login
 
+    - name: Debug
+      run: |
+        pwd
+
     - name: Build Docker Image
       uses: docker/build-push-action@v4
       with:
@@ -66,13 +70,3 @@ jobs:
         build-args: |
           GOOS=linux
           GOARCH=amd64
-
-#     - name: Push Docker Image
-#       uses: docker/push-action@v1
-#       with:
-#         tags: loctrandocker/frontend-service:${{ steps.generate-tag.outputs.tag }}
-
-    - name: Debug
-      run: |
-        pwd
-
