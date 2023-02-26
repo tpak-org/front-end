@@ -64,6 +64,7 @@ jobs:
     - name: Build Docker Image
       uses: docker/build-push-action@v4
       with:
+        file: ./frontend-service.dockerfile
         push: true
         tags: loctrandocker/frontend-service:${{ steps.generate-tag.outputs.tag }}
         context: .
